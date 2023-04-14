@@ -28,7 +28,6 @@ extern "C" void setup(ModInfo& info) {
 // Called later on in the game loading - a good time to install function hooks
 extern "C" void load() {
     il2cpp_functions::Init();
-    QuestUI::Init();
     getModConfig().Init(modInfo);
 
     getLogger().info("Installing hooks...");

@@ -39,11 +39,6 @@
       "id": "bsml",
       "versionRange": "^0.3.2",
       "additionalData": {}
-    },
-    {
-      "id": "questui",
-      "versionRange": "^0.17.12",
-      "additionalData": {}
     }
   ],
   "additionalData": {}

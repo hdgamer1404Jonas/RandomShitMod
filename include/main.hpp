@@ -6,9 +6,6 @@
 // Include config-utils, which allows us to easily create and read configuration files
 #include "config-utils/shared/config-utils.hpp"
 
-// Quest and BS UI includes
-#include "questui/shared/QuestUI.hpp"
-
 // beatsaber-hook is a modding framework that lets us call functions and fetch field values from in the game
 // It also allows creating objects, configuration, and importantly, hooking methods to modify their values
 #include "beatsaber-hook/shared/utils/logging.hpp"

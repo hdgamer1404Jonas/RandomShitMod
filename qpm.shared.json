@@ -40,11 +40,6 @@
         "id": "bsml",
         "versionRange": "^0.3.2",
         "additionalData": {}
-      },
-      {
-        "id": "questui",
-        "versionRange": "^0.17.12",
-        "additionalData": {}
       }
     ],
     "additionalData": {}
@@ -155,6 +150,31 @@
     },
     {
       "dependency": {
+        "id": "beatsaber-hook",
+        "versionRange": "^3.8.0",
+        "additionalData": {
+          "soLink": "https://github.com/sc2ad/beatsaber-hook/releases/download/v3.14.0/libbeatsaber-hook_3_14_0.so",
+          "debugSoLink": "https://github.com/sc2ad/beatsaber-hook/releases/download/v3.14.0/debug_libbeatsaber-hook_3_14_0.so",
+          "branchName": "version-v3.14.0"
+        }
+      },
+      "version": "3.14.0"
+    },
+    {
+      "dependency": {
+        "id": "codegen",
+        "versionRange": "^0.33.0",
+        "additionalData": {
+          "soLink": "https://github.com/sc2ad/BeatSaber-Quest-Codegen/releases/download/v0.33.0/libcodegen.so",
+          "overrideSoName": "libcodegen.so",
+          "modLink": "https://github.com/sc2ad/BeatSaber-Quest-Codegen/releases/download/v0.33.0/Codegen.qmod",
+          "branchName": "version-v0.33.0"
+        }
+      },
+      "version": "0.33.0"
+    },
+    {
+      "dependency": {
         "id": "tinyxml2",
         "versionRange": "^9.0.5",
         "additionalData": {
@@ -166,18 +186,6 @@
         }
       },
       "version": "9.0.5"
-    },
-    {
-      "dependency": {
-        "id": "beatsaber-hook",
-        "versionRange": "^3.8.0",
-        "additionalData": {
-          "soLink": "https://github.com/sc2ad/beatsaber-hook/releases/download/v3.14.0/libbeatsaber-hook_3_14_0.so",
-          "debugSoLink": "https://github.com/sc2ad/beatsaber-hook/releases/download/v3.14.0/debug_libbeatsaber-hook_3_14_0.so",
-          "branchName": "version-v3.14.0"
-        }
-      },
-      "version": "3.14.0"
     },
     {
       "dependency": {
@@ -197,38 +205,6 @@
         }
       },
       "version": "9.0.0"
-    },
-    {
-      "dependency": {
-        "id": "codegen",
-        "versionRange": "^0.33.0",
-        "additionalData": {
-          "soLink": "https://github.com/sc2ad/BeatSaber-Quest-Codegen/releases/download/v0.33.0/libcodegen.so",
-          "overrideSoName": "libcodegen.so",
-          "modLink": "https://github.com/sc2ad/BeatSaber-Quest-Codegen/releases/download/v0.33.0/Codegen.qmod",
-          "branchName": "version-v0.33.0"
-        }
-      },
-      "version": "0.33.0"
-    },
-    {
-      "dependency": {
-        "id": "questui",
-        "versionRange": "^0.17.12",
-        "additionalData": {
-          "soLink": "https://github.com/darknight1050/QuestUI/releases/download/v0.17.12/libquestui.so",
-          "debugSoLink": "https://github.com/darknight1050/QuestUI/releases/download/v0.17.12/debug_libquestui.so",
-          "overrideSoName": "libquestui.so",
-          "modLink": "https://github.com/darknight1050/QuestUI/releases/download/v0.17.12/QuestUI.qmod",
-          "branchName": "version-v0.17.12",
-          "compileOptions": {
-            "systemIncludes": [
-              "shared/cppcodec"
-            ]
-          }
-        }
-      },
-      "version": "0.17.12"
     }
   ]
 }
