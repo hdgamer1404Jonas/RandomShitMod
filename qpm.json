@@ -13,12 +13,12 @@
 		}
 	},
 	"info": {
-		"name": "random shit",
-		"id": "random shit",
+		"name": "randomshit",
+		"id": "randomshit",
 		"version": "0.1.0",
 		"url": null,
 		"additionalData": {
-			"overrideSoName": "librandom shit.so",
+			"overrideSoName": "librandomshit.so",
 			"cmake": true
 		}
 	},

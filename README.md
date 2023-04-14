@@ -1,4 +1,4 @@
-# random shit
+# randomshit
 
 A mod which implements random shit and may messes around with THE UNITY PARTICLE SYSTEM
 

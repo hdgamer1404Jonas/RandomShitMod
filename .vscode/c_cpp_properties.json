@@ -2,7 +2,7 @@
   "configurations": [
     {
       "defines": [
-        "MOD_ID=\"random shit\"",
+        "MOD_ID=\"randomshit\"",
         "VERSION=\"0.1.0\"",
         "__GNUC__",
         "__aarch64__"
