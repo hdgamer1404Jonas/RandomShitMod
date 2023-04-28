@@ -1,4 +1,10 @@
 #include "main.hpp"
+#include "bsml/shared/BSML.hpp"
+#include "logger.hpp"
+#include "custom-types/shared/register.hpp"
+#include "lapiz/shared/zenject/Zenjector.hpp"
+#include "lapiz/shared/AttributeRegistration.hpp"
+#include "Installers/MenuInstaller.hpp"
 
 static ModInfo modInfo; // Stores the ID and version of our mod, and is sent to the modloader upon startup
 
@@ -7,12 +13,6 @@ static ModInfo modInfo; // Stores the ID and version of our mod, and is sent to 
 Configuration& getConfig() {
     static Configuration config(modInfo);
     return config;
-}
-
-// Returns a logger, useful for printing debug messages
-Logger& getLogger() {
-    static Logger* logger = new Logger(modInfo);
-    return *logger;
 }
 
 // Called at the early stages of game loading
@@ -29,8 +29,14 @@ extern "C" void setup(ModInfo& info) {
 extern "C" void load() {
     il2cpp_functions::Init();
     getModConfig().Init(modInfo);
+    ::BSML::Init();
+    ::custom_types::Register::AutoRegister();
+    ::Lapiz::Attributes::AutoRegister();
 
     getLogger().info("Installing hooks...");
     // Install our hooks (none defined yet)
     getLogger().info("Installed all hooks!");
+
+    auto zenjector = ::Lapiz::Zenject::Zenjector::Get();
+    zenjector->Install<::RandomShit::Installers::MenuInstaller *>(::Lapiz::Zenject::Location::Menu);
 }

@@ -27,18 +27,33 @@
         "additionalData": {}
       },
       {
-        "id": "config-utils",
-        "versionRange": "^1.0.2",
+        "id": "codegen",
+        "versionRange": "^0.32.0",
         "additionalData": {}
       },
       {
         "id": "custom-types",
-        "versionRange": "^0.15.24",
+        "versionRange": "^0.15.22",
         "additionalData": {}
       },
       {
         "id": "bsml",
-        "versionRange": "^0.3.2",
+        "versionRange": "^0.2.9",
+        "additionalData": {}
+      },
+      {
+        "id": "config-utils",
+        "versionRange": "^1.0.1",
+        "additionalData": {}
+      },
+      {
+        "id": "lapiz",
+        "versionRange": "^0.1.9",
+        "additionalData": {}
+      },
+      {
+        "id": "paper",
+        "versionRange": "^1.2.9",
         "additionalData": {}
       }
     ],
@@ -48,70 +63,26 @@
     {
       "dependency": {
         "id": "bsml",
-        "versionRange": "^0.3.2",
+        "versionRange": "^0.2.9",
         "additionalData": {
-          "soLink": "https://github.com/RedBrumbler/Quest-BSML/releases/download/v0.3.2/libbsml.so",
-          "debugSoLink": "https://github.com/RedBrumbler/Quest-BSML/releases/download/v0.3.2/debug_libbsml.so",
+          "soLink": "https://github.com/RedBrumbler/Quest-BSML/releases/download/v0.2.10/libbsml.so",
+          "debugSoLink": "https://github.com/RedBrumbler/Quest-BSML/releases/download/v0.2.10/debug_libbsml.so",
           "overrideSoName": "libbsml.so",
-          "modLink": "https://github.com/RedBrumbler/Quest-BSML/releases/download/v0.3.2/BSML.qmod",
-          "branchName": "version-v0.3.2"
+          "modLink": "https://github.com/RedBrumbler/Quest-BSML/releases/download/v0.2.10/BSML.qmod",
+          "branchName": "version-v0.2.10"
         }
       },
-      "version": "0.3.2"
+      "version": "0.2.10"
     },
     {
       "dependency": {
-        "id": "modloader",
-        "versionRange": "=1.2.3",
+        "id": "libil2cpp",
+        "versionRange": "^0.2.3",
         "additionalData": {
-          "soLink": "https://github.com/sc2ad/QuestLoader/releases/download/v1.2.3/libmodloader64.so",
-          "overrideSoName": "libmodloader.so",
-          "branchName": "version-v1.2.3"
+          "headersOnly": true
         }
       },
-      "version": "1.2.3"
-    },
-    {
-      "dependency": {
-        "id": "paper",
-        "versionRange": "^1.2.9",
-        "additionalData": {
-          "soLink": "https://github.com/Fernthedev/paperlog/releases/download/v1.2.9/libpaperlog.so",
-          "debugSoLink": "https://github.com/Fernthedev/paperlog/releases/download/v1.2.9/debug_libpaperlog.so",
-          "overrideSoName": "libpaperlog.so",
-          "modLink": "https://github.com/Fernthedev/paperlog/releases/download/v1.2.9/paperlog.qmod",
-          "branchName": "version-v1.2.9"
-        }
-      },
-      "version": "1.2.9"
-    },
-    {
-      "dependency": {
-        "id": "config-utils",
-        "versionRange": "^1.0.2",
-        "additionalData": {
-          "headersOnly": true,
-          "soLink": "https://github.com/darknight1050/config-utils/releases/download/v1.0.2/libconfig-utils_test.so",
-          "debugSoLink": "https://github.com/darknight1050/config-utils/releases/download/v1.0.2/debug_libconfig-utils_test.so",
-          "overrideSoName": "libconfig-utils_test.so",
-          "branchName": "version-v1.0.2"
-        }
-      },
-      "version": "1.0.2"
-    },
-    {
-      "dependency": {
-        "id": "custom-types",
-        "versionRange": "^0.15.24",
-        "additionalData": {
-          "soLink": "https://github.com/sc2ad/Il2CppQuestTypePatching/releases/download/v0.15.24/libcustom-types.so",
-          "debugSoLink": "https://github.com/sc2ad/Il2CppQuestTypePatching/releases/download/v0.15.24/debug_libcustom-types.so",
-          "overrideSoName": "libcustom-types.so",
-          "modLink": "https://github.com/sc2ad/Il2CppQuestTypePatching/releases/download/v0.15.24/CustomTypes.qmod",
-          "branchName": "version-v0.15.24"
-        }
-      },
-      "version": "0.15.24"
+      "version": "0.2.3"
     },
     {
       "dependency": {
@@ -126,13 +97,14 @@
     },
     {
       "dependency": {
-        "id": "libil2cpp",
-        "versionRange": "^0.2.3",
+        "id": "sombrero",
+        "versionRange": "^0.1.37",
         "additionalData": {
-          "headersOnly": true
+          "headersOnly": true,
+          "branchName": "version-v0.1.37"
         }
       },
-      "version": "0.2.3"
+      "version": "0.1.37"
     },
     {
       "dependency": {
@@ -150,31 +122,6 @@
     },
     {
       "dependency": {
-        "id": "beatsaber-hook",
-        "versionRange": "^3.8.0",
-        "additionalData": {
-          "soLink": "https://github.com/sc2ad/beatsaber-hook/releases/download/v3.14.0/libbeatsaber-hook_3_14_0.so",
-          "debugSoLink": "https://github.com/sc2ad/beatsaber-hook/releases/download/v3.14.0/debug_libbeatsaber-hook_3_14_0.so",
-          "branchName": "version-v3.14.0"
-        }
-      },
-      "version": "3.14.0"
-    },
-    {
-      "dependency": {
-        "id": "codegen",
-        "versionRange": "^0.33.0",
-        "additionalData": {
-          "soLink": "https://github.com/sc2ad/BeatSaber-Quest-Codegen/releases/download/v0.33.0/libcodegen.so",
-          "overrideSoName": "libcodegen.so",
-          "modLink": "https://github.com/sc2ad/BeatSaber-Quest-Codegen/releases/download/v0.33.0/Codegen.qmod",
-          "branchName": "version-v0.33.0"
-        }
-      },
-      "version": "0.33.0"
-    },
-    {
-      "dependency": {
         "id": "tinyxml2",
         "versionRange": "^9.0.5",
         "additionalData": {
@@ -186,6 +133,99 @@
         }
       },
       "version": "9.0.5"
+    },
+    {
+      "dependency": {
+        "id": "paper",
+        "versionRange": "^1.2.9",
+        "additionalData": {
+          "soLink": "https://github.com/Fernthedev/paperlog/releases/download/v1.2.9/libpaperlog.so",
+          "debugSoLink": "https://github.com/Fernthedev/paperlog/releases/download/v1.2.9/debug_libpaperlog.so",
+          "overrideSoName": "libpaperlog.so",
+          "modLink": "https://github.com/Fernthedev/paperlog/releases/download/v1.2.9/paperlog.qmod",
+          "branchName": "version-v1.2.9"
+        }
+      },
+      "version": "1.2.9"
+    },
+    {
+      "dependency": {
+        "id": "modloader",
+        "versionRange": "=1.2.3",
+        "additionalData": {
+          "soLink": "https://github.com/sc2ad/QuestLoader/releases/download/v1.2.3/libmodloader64.so",
+          "overrideSoName": "libmodloader.so",
+          "branchName": "version-v1.2.3"
+        }
+      },
+      "version": "1.2.3"
+    },
+    {
+      "dependency": {
+        "id": "config-utils",
+        "versionRange": "^1.0.1",
+        "additionalData": {
+          "headersOnly": true,
+          "soLink": "https://github.com/darknight1050/config-utils/releases/download/v1.0.2/libconfig-utils_test.so",
+          "debugSoLink": "https://github.com/darknight1050/config-utils/releases/download/v1.0.2/debug_libconfig-utils_test.so",
+          "overrideSoName": "libconfig-utils_test.so",
+          "branchName": "version-v1.0.2"
+        }
+      },
+      "version": "1.0.2"
+    },
+    {
+      "dependency": {
+        "id": "custom-types",
+        "versionRange": "^0.15.22",
+        "additionalData": {
+          "soLink": "https://github.com/sc2ad/Il2CppQuestTypePatching/releases/download/v0.15.24/libcustom-types.so",
+          "debugSoLink": "https://github.com/sc2ad/Il2CppQuestTypePatching/releases/download/v0.15.24/debug_libcustom-types.so",
+          "overrideSoName": "libcustom-types.so",
+          "modLink": "https://github.com/sc2ad/Il2CppQuestTypePatching/releases/download/v0.15.24/CustomTypes.qmod",
+          "branchName": "version-v0.15.24"
+        }
+      },
+      "version": "0.15.24"
+    },
+    {
+      "dependency": {
+        "id": "lapiz",
+        "versionRange": "^0.1.9",
+        "additionalData": {
+          "soLink": "https://github.com/raineio/Lapiz/releases/download/v0.1.10/liblapiz.so",
+          "debugSoLink": "https://github.com/raineio/Lapiz/releases/download/v0.1.10/debug_liblapiz.so",
+          "overrideSoName": "liblapiz.so",
+          "modLink": "https://github.com/raineio/Lapiz/releases/download/v0.1.10/Lapiz.qmod",
+          "branchName": "version-v0.1.10"
+        }
+      },
+      "version": "0.1.10"
+    },
+    {
+      "dependency": {
+        "id": "codegen",
+        "versionRange": "^0.32.0",
+        "additionalData": {
+          "soLink": "https://github.com/sc2ad/BeatSaber-Quest-Codegen/releases/download/v0.32.0/libcodegen.so",
+          "overrideSoName": "libcodegen.so",
+          "modLink": "https://github.com/sc2ad/BeatSaber-Quest-Codegen/releases/download/v0.32.0/Codegen.qmod",
+          "branchName": "version-v0.32.0"
+        }
+      },
+      "version": "0.32.0"
+    },
+    {
+      "dependency": {
+        "id": "beatsaber-hook",
+        "versionRange": "^3.8.0",
+        "additionalData": {
+          "soLink": "https://github.com/sc2ad/beatsaber-hook/releases/download/v3.14.0/libbeatsaber-hook_3_14_0.so",
+          "debugSoLink": "https://github.com/sc2ad/beatsaber-hook/releases/download/v3.14.0/debug_libbeatsaber-hook_3_14_0.so",
+          "branchName": "version-v3.14.0"
+        }
+      },
+      "version": "3.14.0"
     },
     {
       "dependency": {

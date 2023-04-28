@@ -42,7 +42,7 @@ add_library(
         SHARED
         ${cpp_file_list}
         ${c_file_list}
-        include/ModConfiguration.h src/UI/SettingsUI.cpp include/UI/SettingsUI.hpp)
+        include/ModConfiguration.h src/UI/SettingsUI.cpp include/UI/SettingsUI.hpp src/logger.cpp include/logger.hpp include/assets.hpp include/Installers/MenuInstaller.hpp src/Installers/MenuInstaller.cpp)
 
 target_include_directories(${COMPILE_ID} PRIVATE .)
 
@@ -99,3 +99,5 @@ add_custom_command(TARGET ${COMPILE_ID} POST_BUILD
         COMMAND ${CMAKE_COMMAND} -E copy ${a_file} debug/${file}
         COMMENT "Copy a files for ndk stack")
         endforeach()
+
+include(assets_include.cmake)
