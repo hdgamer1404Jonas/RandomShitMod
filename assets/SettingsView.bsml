@@ -11,7 +11,16 @@
                                     <text text=" " align="MidlineLeft" font-size="5"/>
                                 </horizontal>
                             </vertical>
-                        </horizontal>
+            </horizontal>
+            <horizontal background-color='cyan' bg="round-rect-panel" horizontal-fit="PreferredSize" vertical-fit="MinSize" preferred-width="100" min-height="17">
+                                        <vertical pad="5" horizontal-fit="PreferredSize" vertical-fit="MinSize" preferred-width="100" preferred-height="20" spacing="6">
+                                            <horizontal preferred-width="90" child-expand-width="true" spacing="0">
+                                                <text text="&lt;color=#FFF>Toggle DVD Logo" align="MidlineLeft" font-size="5" color='#69B' underlined='true' italics='true'/>
+                                                <text text="Enabled" align="MidlineRight" font-size="4" id="description" italics='true'/>
+                                                <text text=" " align="MidlineLeft" font-size="5"/>
+                                            </horizontal>
+                                        </vertical>
+            </horizontal>
         </settings-container>
     </vertical>
 </bg>
