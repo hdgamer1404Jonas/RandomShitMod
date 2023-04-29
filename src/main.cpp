@@ -5,7 +5,11 @@
 #include "lapiz/shared/zenject/Zenjector.hpp"
 #include "lapiz/shared/AttributeRegistration.hpp"
 #include "Installers/MenuInstaller.hpp"
+#include "UnityEngine/SceneManagement/SceneManager.hpp"
+#include "UnityEngine/SceneManagement/Scene.hpp"
+#include "Modules/ModManager.hpp"
 
+static ModManager modManager("RandomShit");
 static ModInfo modInfo; // Stores the ID and version of our mod, and is sent to the modloader upon startup
 
 // Loads the config from disk using our modInfo, then returns it for use
@@ -13,6 +17,13 @@ static ModInfo modInfo; // Stores the ID and version of our mod, and is sent to 
 Configuration& getConfig() {
     static Configuration config(modInfo);
     return config;
+}
+
+MAKE_HOOK_MATCH(SceneManager_Internal_ActiveSceneChanged, &UnityEngine::SceneManagement::SceneManager::Internal_ActiveSceneChanged, void, UnityEngine::SceneManagement::Scene previousActiveScene, UnityEngine::SceneManagement::Scene newActiveScene) {
+    SceneManager_Internal_ActiveSceneChanged(previousActiveScene, newActiveScene);
+    getLogger().info("Active scene changed: %s -> %s", to_utf8(csstrtostr(previousActiveScene.get_name())).c_str(), to_utf8(csstrtostr(newActiveScene.get_name())).c_str());
+    modManager.onSceneChange(previousActiveScene, newActiveScene);
+    modManager.setActiveScene(to_utf8(csstrtostr(newActiveScene.get_name())).c_str());
 }
 
 // Called at the early stages of game loading
@@ -34,7 +45,7 @@ extern "C" void load() {
     ::Lapiz::Attributes::AutoRegister();
 
     getLogger().info("Installing hooks...");
-    // Install our hooks (none defined yet)
+    INSTALL_HOOK(getLogger(), SceneManager_Internal_ActiveSceneChanged);
     getLogger().info("Installed all hooks!");
 
     auto zenjector = ::Lapiz::Zenject::Zenjector::Get();
