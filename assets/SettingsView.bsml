@@ -3,21 +3,26 @@
     anchor-pos-y='5'>
     <vertical horizontal-fit="Unconstrained" vertical-fit="Unconstrained" spacing="-13">
         <settings-container>
+            <text text="Welcome to the Random Shit Mod - a mod which includes Random shit" font-size="4" font-style="Bold" color="green" alignment="Center" vertical-alignment="Center" />
             <horizontal background-color='cyan' bg="round-rect-panel" horizontal-fit="PreferredSize" vertical-fit="MinSize" preferred-width="100" min-height="17">
                             <vertical pad="5" horizontal-fit="PreferredSize" vertical-fit="MinSize" preferred-width="100" preferred-height="20" spacing="6">
                                 <horizontal preferred-width="90" child-expand-width="true" spacing="0">
-                                    <text text="&lt;color=#FFF>Welcome to the RandomShitMod. A mod which literally only introduces random shit" align="MidlineLeft" font-size="5" color='#69B' underlined='true' italics='true'/>
-                                    <text text="Enabled" align="MidlineRight" font-size="4" id="description" italics='true'/>
-                                    <text text=" " align="MidlineLeft" font-size="5"/>
+                                    <text text="&lt;color=#FFF>Rotate Camera" align="MidlineLeft" font-size="4" color='red' underlined='true' italics='false'/>
+                                    <text text="Changes the Rotation of the Camera by a random amount Every time you change the scene" align="MidlineLeft" font-size="3" color='green'/>
+                                </horizontal>
+                                <horizontal preferred-width="90" child-expand-width="true" spacing="0.5">
+                                    <toggle-setting text="" preferred-width="21" value="rotateCamEnabled" apply-on-change="true"/>
                                 </horizontal>
                             </vertical>
             </horizontal>
             <horizontal background-color='cyan' bg="round-rect-panel" horizontal-fit="PreferredSize" vertical-fit="MinSize" preferred-width="100" min-height="17">
                                         <vertical pad="5" horizontal-fit="PreferredSize" vertical-fit="MinSize" preferred-width="100" preferred-height="20" spacing="6">
                                             <horizontal preferred-width="90" child-expand-width="true" spacing="0">
-                                                <text text="&lt;color=#FFF>Toggle DVD Logo" align="MidlineLeft" font-size="5" color='#69B' underlined='true' italics='true'/>
-                                                <text text="Enabled" align="MidlineRight" font-size="4" id="description" italics='true'/>
-                                                <text text=" " align="MidlineLeft" font-size="5"/>
+                                                <text text="&lt;color=#FFF>Go to the Hospital" align="MidlineLeft" font-size="4" color='red' underlined='true' italics='false'/>
+                                                <text text="Who needs a good health? This will skip that health and safety for you" align="MidlineLeft" font-size="3" color='green'/>
+                                            </horizontal>
+                                            <horizontal preferred-width="90" child-expand-width="true" spacing="0.5">
+                                                <toggle-setting text="" preferred-width="21" value="noHealthAndSafety" apply-on-change="true"/>
                                             </horizontal>
                                         </vertical>
             </horizontal>

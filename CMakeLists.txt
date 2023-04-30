@@ -42,7 +42,7 @@ add_library(
         SHARED
         ${cpp_file_list}
         ${c_file_list}
-        include/ModConfiguration.h src/UI/SettingsUI.cpp include/UI/SettingsUI.hpp src/logger.cpp include/logger.hpp include/assets.hpp include/Installers/MenuInstaller.hpp src/Installers/MenuInstaller.cpp src/Modules/ModManager.cpp include/Modules/ModManager.hpp)
+        include/ModConfiguration.h src/UI/SettingsUI.cpp include/UI/SettingsUI.hpp src/logger.cpp include/logger.hpp include/assets.hpp include/Installers/MenuInstaller.hpp src/Installers/MenuInstaller.cpp)
 
 target_include_directories(${COMPILE_ID} PRIVATE .)
 

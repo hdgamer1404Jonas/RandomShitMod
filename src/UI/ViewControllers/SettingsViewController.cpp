@@ -9,6 +9,7 @@
 #include "UnityEngine/XR/XRNode.hpp"
 #include "VRUIControls/VRInputModule.hpp"
 #include "assets.hpp"
+#include "ModConfiguration.h"
 
 #define DEFINE_BSML_PROPERTY(type, name, get, set)          \
 type SettingsViewController::get_##name() get               \
@@ -28,4 +29,22 @@ namespace RandomShit::UI::ViewControllers {
         if (!firstActivation) return;
         BSML::parse_and_construct(::IncludedAssets::SettingsView_bsml, get_transform(), this);
     }
+
+    DEFINE_BSML_PROPERTY(bool, rotateCamEnabled,
+                         { // get
+                             return getModConfig().rotateCamEnabled.GetValue();
+                         },
+                         { // set
+                             getModConfig().rotateCamEnabled.SetValue(value);
+                         }
+    )
+
+    DEFINE_BSML_PROPERTY(bool, noHealthAndSafety,
+                         { // get
+                             return getModConfig().noHealthAndSafety.GetValue();
+                         },
+                         { // set
+                             getModConfig().noHealthAndSafety.SetValue(value);
+                         }
+    )
 }

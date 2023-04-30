@@ -7,9 +7,7 @@
 #include "Installers/MenuInstaller.hpp"
 #include "UnityEngine/SceneManagement/SceneManager.hpp"
 #include "UnityEngine/SceneManagement/Scene.hpp"
-#include "Modules/ModManager.hpp"
 
-static ModManager modManager("RandomShit");
 static ModInfo modInfo; // Stores the ID and version of our mod, and is sent to the modloader upon startup
 
 // Loads the config from disk using our modInfo, then returns it for use
@@ -19,11 +17,13 @@ Configuration& getConfig() {
     return config;
 }
 
-MAKE_HOOK_MATCH(SceneManager_Internal_ActiveSceneChanged, &UnityEngine::SceneManagement::SceneManager::Internal_ActiveSceneChanged, void, UnityEngine::SceneManagement::Scene previousActiveScene, UnityEngine::SceneManagement::Scene newActiveScene) {
-    SceneManager_Internal_ActiveSceneChanged(previousActiveScene, newActiveScene);
-    getLogger().info("Active scene changed: %s -> %s", to_utf8(csstrtostr(previousActiveScene.get_name())).c_str(), to_utf8(csstrtostr(newActiveScene.get_name())).c_str());
-    modManager.onSceneChange(previousActiveScene, newActiveScene);
-    modManager.setActiveScene(to_utf8(csstrtostr(newActiveScene.get_name())).c_str());
+MAKE_HOOK_FIND_CLASS_INSTANCE(HealthWarningFlowCoordinator_DidActivate, "", "HealthWarningFlowCoordinator", "DidActivate", void, Il2CppObject* self, bool firstActivation, bool addedToHierarchy, bool screenSystemEnabling) {
+    bool skipHealthAndSafety = getModConfig().noHealthAndSafety.GetValue();
+
+    getLogger().info("Skipping Health and Safety Warning...");
+
+    // skip the health and safety warning
+
 }
 
 // Called at the early stages of game loading
@@ -45,7 +45,7 @@ extern "C" void load() {
     ::Lapiz::Attributes::AutoRegister();
 
     getLogger().info("Installing hooks...");
-    INSTALL_HOOK(getLogger(), SceneManager_Internal_ActiveSceneChanged);
+    INSTALL_HOOK(getLogger(), HealthWarningFlowCoordinator_DidActivate);
     getLogger().info("Installed all hooks!");
 
     auto zenjector = ::Lapiz::Zenject::Zenjector::Get();
