@@ -21,5 +21,5 @@ DECLARE_CLASS_CODEGEN(RandomShit::UI::ViewControllers, SettingsViewController,::
                       DECLARE_OVERRIDE_METHOD(void, DidActivate, GET_METHOD(::HMUI::ViewController::DidActivate), bool firstActivation, bool addedToHierarchy, bool screenSystemEnabling);
 
 DECLARE_BSML_PROPERTY(bool, rotateCamEnabled);
-DECLARE_BSML_PROPERTY(bool, noHealthAndSafety);
+DECLARE_BSML_PROPERTY(bool, quotes);
 )

@@ -17,15 +17,6 @@ Configuration& getConfig() {
     return config;
 }
 
-MAKE_HOOK_FIND_CLASS_INSTANCE(HealthWarningFlowCoordinator_DidActivate, "", "HealthWarningFlowCoordinator", "DidActivate", void, Il2CppObject* self, bool firstActivation, bool addedToHierarchy, bool screenSystemEnabling) {
-    bool skipHealthAndSafety = getModConfig().noHealthAndSafety.GetValue();
-
-    getLogger().info("Skipping Health and Safety Warning...");
-
-    // skip the health and safety warning
-
-}
-
 // Called at the early stages of game loading
 extern "C" void setup(ModInfo& info) {
     info.id = MOD_ID;
@@ -45,7 +36,6 @@ extern "C" void load() {
     ::Lapiz::Attributes::AutoRegister();
 
     getLogger().info("Installing hooks...");
-    INSTALL_HOOK(getLogger(), HealthWarningFlowCoordinator_DidActivate);
     getLogger().info("Installed all hooks!");
 
     auto zenjector = ::Lapiz::Zenject::Zenjector::Get();

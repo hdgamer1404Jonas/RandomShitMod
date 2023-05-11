@@ -18,11 +18,11 @@
             <horizontal background-color='cyan' bg="round-rect-panel" horizontal-fit="PreferredSize" vertical-fit="MinSize" preferred-width="100" min-height="17">
                                         <vertical pad="5" horizontal-fit="PreferredSize" vertical-fit="MinSize" preferred-width="100" preferred-height="20" spacing="6">
                                             <horizontal preferred-width="90" child-expand-width="true" spacing="0">
-                                                <text text="&lt;color=#FFF>Go to the Hospital" align="MidlineLeft" font-size="4" color='red' underlined='true' italics='false'/>
-                                                <text text="Who needs a good health? This will skip that health and safety for you" align="MidlineLeft" font-size="3" color='green'/>
+                                                <text text="&lt;color=#FFF>Passive Aggressive Result Screen Quotes" align="MidlineLeft" font-size="4" color='red' underlined='true' italics='false'/>
+                                                <text text="Make GPT3 generate a Passive Aggressive quote for you depending on the score you achieved on a map. This Requires a OpenAI token to be set in the config." align="MidlineLeft" font-size="3" color='green'/>
                                             </horizontal>
                                             <horizontal preferred-width="90" child-expand-width="true" spacing="0.5">
-                                                <toggle-setting text="" preferred-width="21" value="noHealthAndSafety" apply-on-change="true"/>
+                                                <toggle-setting text="" preferred-width="21" value="quotes" apply-on-change="true"/>
                                             </horizontal>
                                         </vertical>
             </horizontal>
