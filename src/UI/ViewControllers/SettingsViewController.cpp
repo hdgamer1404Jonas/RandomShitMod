@@ -39,12 +39,12 @@ namespace RandomShit::UI::ViewControllers {
                          }
     )
 
-    DEFINE_BSML_PROPERTY(bool, noHealthAndSafety,
+    DEFINE_BSML_PROPERTY(bool, quotes,
                          { // get
-                             return getModConfig().noHealthAndSafety.GetValue();
+                             return getModConfig().quotes.GetValue();
                          },
                          { // set
-                             getModConfig().noHealthAndSafety.SetValue(value);
+                             getModConfig().quotes.SetValue(value);
                          }
     )
 }

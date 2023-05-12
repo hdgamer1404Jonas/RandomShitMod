@@ -7,6 +7,10 @@
 #include "Installers/MenuInstaller.hpp"
 #include "UnityEngine/SceneManagement/SceneManager.hpp"
 #include "UnityEngine/SceneManagement/Scene.hpp"
+#include "GlobalNamespace/LevelCompletionResults.hpp"
+#include "GlobalNamespace/SoloFreePlayFlowCoordinator.hpp"
+
+using namespace GlobalNamespace;
 
 static ModInfo modInfo; // Stores the ID and version of our mod, and is sent to the modloader upon startup
 
@@ -16,6 +20,28 @@ Configuration& getConfig() {
     static Configuration config(modInfo);
     return config;
 }
+
+MAKE_HOOK_MATCH(ProcessResultsSolo, &SoloFreePlayFlowCoordinator::ProcessLevelCompletionResultsAfterLevelDidFinish, void, SoloFreePlayFlowCoordinator* self, LevelCompletionResults* levelCompletionResults, IReadonlyBeatmapData* transformedBeatmapData, IDifficultyBeatmap* difficultyBeatmap, GameplayModifiers* gameplayModifiers, bool practice) {
+    ProcessResultsSolo(self, levelCompletionResults, transformedBeatmapData, difficultyBeatmap, gameplayModifiers, practice);
+
+
+    if(levelCompletionResults->levelEndStateType == LevelCompletionResults::LevelEndStateType::Incomplete) return;
+
+    int maxCombo = levelCompletionResults->maxCombo;
+    int score = levelCompletionResults->multipliedScore;
+
+    // get the accuracy from the results
+    float accuracy = levelCompletionResults->multipliedScore / (float)levelCompletionResults->maxCutScore;
+
+    getLogger().info("Max Combo: %d", maxCombo);
+    getLogger().info("Score: %d", score);
+    getLogger().info("Accuracy: %f", accuracy);
+
+
+
+
+}
+
 
 // Called at the early stages of game loading
 extern "C" void setup(ModInfo& info) {
@@ -36,6 +62,7 @@ extern "C" void load() {
     ::Lapiz::Attributes::AutoRegister();
 
     getLogger().info("Installing hooks...");
+    INSTALL_HOOK(getLogger(), ProcessResultsSolo);
     getLogger().info("Installed all hooks!");
 
     auto zenjector = ::Lapiz::Zenject::Zenjector::Get();
