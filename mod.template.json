@@ -11,5 +11,6 @@
   "dependencies": [],
   "modFiles": ["${binary}"],
   "libraryFiles": [],
-  "fileCopies": []
+  "fileCopies": [],
+  "coverImage": "cover.png"
 }
