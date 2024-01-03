@@ -15,7 +15,7 @@
         "${workspaceFolder}/shared", 
         "${workspaceFolder}",
         
-        "G:\android-ndk-r25c/**",
+        "/home/jonaswienholt/Dokumente/BeatSaberModDev/android-ndk-r26b/**",
         "${default}"
       ],
       "name": "Quest",

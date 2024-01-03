@@ -1,6 +1,6 @@
-# randomshit
+# RandomShit
 
-A mod which implements random shit and may messes around with THE UNITY PARTICLE SYSTEM
+Introduces random Stuff into the game
 
 Use `qpm-rust s build` to build
 Same goes for `qpm-rust s copy` and `qpm-rust s qmod`
